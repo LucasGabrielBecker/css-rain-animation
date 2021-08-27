@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Raining css animation</title>
+  </head>
+  <body>
+    <div class="choicer">
+      Toggle animation
+      <button onclick="toggleActive()" class="switch" id="switch">
+        <div id="btn" class="active" />
+      </button>
+    </div>
+    <div id="bg">
+      <img src="assets/night_city.jpg" />
+    </div>
+    <div class="wrapper">
+      <div class="rain layer1 a"></div>
+      <div class="rain layer1"></div>
+      <div class="rain layer2 a"></div>
+      <div class="rain layer2"></div>
+      <div class="rain layer3 a"></div>
+      <div class="rain layer3"></div>
+    </div>
+
+    <script>
+      const button = document.getElementById("btn");
+      const toggleActive = () => {
+        button.classList.toggle("inactive");
+      };
+
+      window.addEventListener("click", () => {
+        const shouldAnimate = button.classList.contains("inactive");
+        if (shouldAnimate) {
+          document.querySelector(".wrapper").style.opacity = 0;
+        } else {
+          document.querySelector(".wrapper").style.opacity = 1;
+        }
+      });
+    </script>
+  </body>
+</html>
